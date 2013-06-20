@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="it.jabawack81.widget.ralug"
+          android:versionCode="2"
+          android:versionName="2012.06.09">
+
+    <uses-sdk android:minSdkVersion="4"/>
+
+
+    <supports-screens
+            android:smallScreens="true"
+            android:normalScreens="true"
+            android:largeScreens="true"/>
+
+
+    <application
+            android:icon="@drawable/icon"
+            android:label="@string/app_name">
+        <receiver
+                android:name="Widgetlight"
+                android:label="@string/widgetlightname">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/widgetlight"/>
+        </receiver>
+        <receiver
+                android:name="Widgetdark"
+                android:label="@string/widgetdarkname">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/widgetdark"/>
+        </receiver>
+
+    </application>
+</manifest>
